@@ -3,7 +3,7 @@ package com.example.tictactoemvc
 class TicTacToeGame {
 
     private var board: Array<Array<Mark>> = Array(ROWS) { Array(COLUMNS) { Mark.MARK_NONE } }
-    private var gameState: GameState = GameState.X_TURN
+    var gameState: GameState = GameState.X_TURN
 
     companion object {
         val ROWS = 3
@@ -43,5 +43,29 @@ class TicTacToeGame {
             }
         }
         return ""
+    }
+
+    fun pressButtonAt(row: Int, column: Int) {
+        if (row !in 0 until ROWS || column !in 0 until COLUMNS) {
+            return
+        }
+
+        if (board[row][column] != Mark.MARK_NONE) {
+            return
+        }
+
+        if (gameState == GameState.X_TURN) {
+            board[row][column] = Mark.MARK_X
+            gameState = GameState.O_TURN
+            checkForWin()
+        } else if (gameState == GameState.O_TURN) {
+            board[row][column] = Mark.MARK_0
+            gameState = GameState.X_TURN
+            checkForWin()
+        }
+    }
+
+    private fun checkForWin() {
+        //TODO
     }
 }
