@@ -1,18 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
     tools:context=".MainActivity">
 
+    <TableLayout
+        android:id="@+id/button_table"
+        android:layout_width="330dp"
+        android:layout_height="330dp"
+        android:layout_centerInParent="true"
+        android:layout_margin="20dp">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button00"
+                style="@style/game_btn"
+                tools:text="X" />
+
+            <Button
+                android:id="@+id/button01"
+                style="@style/game_btn"
+                tools:text="X" />
+
+            <Button
+                android:id="@+id/button02"
+                style="@style/game_btn"
+                tools:text="X" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button10"
+                style="@style/game_btn"
+                tools:text="X" />
+
+            <Button
+                android:id="@+id/button11"
+                style="@style/game_btn"
+                tools:text="X" />
+
+            <Button
+                android:id="@+id/button22"
+                style="@style/game_btn"
+                tools:text="X" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button30"
+                style="@style/game_btn"
+                tools:text="X" />
+
+            <Button
+                android:id="@+id/button31"
+                style="@style/game_btn"
+                tools:text="X" />
+
+            <Button
+                android:id="@+id/button32"
+                style="@style/game_btn"
+                tools:text="X" />
+
+        </TableRow>
+
+    </TableLayout>
+
     <TextView
+        android:id="@+id/game_state_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_above="@+id/button_table"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorText"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:text="@string/x_turn" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/new_game_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_table"
+        android:layout_alignEnd="@+id/button_table"
+        android:backgroundTint="@color/colorBtn"
+        android:text="@string/new_game" />
+
+</RelativeLayout>

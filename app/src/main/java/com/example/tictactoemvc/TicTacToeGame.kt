@@ -1,9 +1,12 @@
 package com.example.tictactoemvc
 
+import android.content.Context
+
 class TicTacToeGame {
 
     private var board: Array<Array<Mark>> = Array(ROWS) { Array(COLUMNS) { Mark.MARK_NONE } }
     var gameState: GameState = GameState.X_TURN
+    private lateinit var context: Context
 
     companion object {
         val ROWS = 3
@@ -22,6 +25,10 @@ class TicTacToeGame {
         X_WINS,
         O_WINS,
         TIE_GAME
+    }
+
+    constructor(context: Context) {
+        this.context = context
     }
 
     init {
@@ -139,5 +146,15 @@ class TicTacToeGame {
             }
         }
         return true
+    }
+
+    fun stringForGameState(): String {
+        return when (gameState) {
+            GameState.X_TURN -> context.getString(R.string.x_turn)
+            GameState.O_TURN -> context.getString(R.string.o_turn)
+            GameState.O_WINS -> context.getString(R.string.o_wins)
+            GameState.X_WINS -> context.getString(R.string.x_wins)
+            GameState.TIE_GAME -> context.getString(R.string.tie_game)
+        }
     }
 }
