@@ -66,6 +66,78 @@ class TicTacToeGame {
     }
 
     private fun checkForWin() {
-        //TODO
+        if (gameState != GameState.X_TURN && gameState != GameState.O_TURN) {
+            return
+        }
+        if (didPieceWin(Mark.MARK_X)) {
+            gameState = GameState.X_WINS
+        } else if (didPieceWin(Mark.MARK_0)) {
+            gameState = GameState.O_WINS
+        } else if (isBoardFull()) {
+            gameState = GameState.TIE_GAME
+        }
+    }
+
+    private fun didPieceWin(mark: Mark): Boolean {
+
+        // check for each rows
+        for (row in 0 until ROWS) {
+            var winHere = true
+            for (column in 0 until COLUMNS) {
+                if (board[row][column] != mark) {
+                    winHere = false
+                }
+            }
+            if (winHere) {
+                return true
+            }
+        }
+
+        // check for columns
+        for (column in 0 until COLUMNS) {
+            var winHere = true
+            for (row in 0 until ROWS) {
+                if (board[row][column] != mark) {
+                    winHere = false
+                }
+            }
+            if (winHere) {
+                return true
+            }
+        }
+
+        // check for main diagonal
+        var winHere = true
+        for (row in 0 until ROWS) {
+            if (board[row][row] != mark) {
+                winHere = false
+            }
+        }
+        if (winHere) {
+            return true
+        }
+
+        // check for off diagonal
+        winHere = true
+        for (row in 0 until ROWS) {
+            if (board[row][ROWS - row - 1] != mark) {
+                winHere = false
+            }
+        }
+        if (winHere) {
+            return true
+        }
+        return false
+    }
+
+    private fun isBoardFull(): Boolean {
+        for (row in 0 until ROWS) {
+            for (column in 0 until COLUMNS) {
+                if (board[row][column] == Mark.MARK_NONE) {
+                    return false
+                }
+            }
+        }
+        return true
     }
 }
