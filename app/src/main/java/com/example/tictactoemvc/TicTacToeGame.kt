@@ -8,7 +8,7 @@ class TicTacToeGame {
     var gameState: GameState = GameState.X_TURN
     private lateinit var context: Context
 
-    companion object {
+    public companion object {
         val ROWS = 3
         val COLUMNS = 3
     }

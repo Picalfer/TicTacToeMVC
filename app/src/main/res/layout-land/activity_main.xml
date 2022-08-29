@@ -8,10 +8,10 @@
 
     <TableLayout
         android:id="@+id/button_table"
-        android:layout_width="330dp"
-        android:layout_height="330dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_centerInParent="true"
-        android:layout_margin="20dp">
+        android:layout_margin="0dp">
 
         <TableRow
             android:layout_width="wrap_content"
@@ -19,17 +19,17 @@
 
             <Button
                 android:id="@+id/button00"
-                style="@style/game_btn"
+                style="@style/game_btn_land"
                 tools:text="X" />
 
             <Button
                 android:id="@+id/button01"
-                style="@style/game_btn"
+                style="@style/game_btn_land"
                 tools:text="X" />
 
             <Button
                 android:id="@+id/button02"
-                style="@style/game_btn"
+                style="@style/game_btn_land"
                 tools:text="X" />
 
         </TableRow>
@@ -40,17 +40,17 @@
 
             <Button
                 android:id="@+id/button10"
-                style="@style/game_btn"
+                style="@style/game_btn_land"
                 tools:text="X" />
 
             <Button
                 android:id="@+id/button11"
-                style="@style/game_btn"
+                style="@style/game_btn_land"
                 tools:text="X" />
 
             <Button
                 android:id="@+id/button12"
-                style="@style/game_btn"
+                style="@style/game_btn_land"
                 tools:text="X" />
 
         </TableRow>
@@ -61,17 +61,17 @@
 
             <Button
                 android:id="@+id/button20"
-                style="@style/game_btn"
+                style="@style/game_btn_land"
                 tools:text="X" />
 
             <Button
                 android:id="@+id/button21"
-                style="@style/game_btn"
+                style="@style/game_btn_land"
                 tools:text="X" />
 
             <Button
                 android:id="@+id/button22"
-                style="@style/game_btn"
+                style="@style/game_btn_land"
                 tools:text="X" />
 
         </TableRow>
@@ -82,8 +82,10 @@
         android:id="@+id/game_state_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button_table"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerInParent="true"
+        android:layout_toStartOf="@+id/button_table"
+        android:textAlignment="center"
         android:textColor="@color/colorText"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -93,9 +95,13 @@
         android:id="@+id/new_game_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button_table"
-        android:layout_alignEnd="@+id/button_table"
+        android:layout_alignParentEnd="true"
+        android:layout_marginHorizontal="30dp"
+        android:layout_centerVertical="true"
+        android:layout_alignBaseline="@+id/game_state_view"
+        android:layout_toEndOf="@+id/button_table"
         android:backgroundTint="@color/colorBtn"
-        android:text="@string/new_game" />
+        android:text="@string/new_game"
+        android:textAlignment="center" />
 
 </RelativeLayout>
