@@ -9,8 +9,8 @@ class TicTacToeGame {
     private lateinit var context: Context
 
     companion object {
-        val ROWS = 3
-        val COLUMNS = 3
+        const val ROWS = 3
+        const val COLUMNS = 3
     }
 
     enum class Mark {

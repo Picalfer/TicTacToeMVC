@@ -1,12 +1,11 @@
 <resources>
-    <string name="app_name">TicTacToeMVC</string>
+    <string name="app_name">TicTacToe</string>
 
     <string name="x_turn">X Turn</string>
     <string name="o_turn">O Turn</string>
     <string name="x_wins">X Wins</string>
     <string name="o_wins">O Wins</string>
     <string name="tie_game">Tie Game</string>
-
     <string name="new_game">New Game</string>
     <string name="space">" "</string>
 </resources>
