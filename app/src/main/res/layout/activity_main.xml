@@ -6,6 +6,17 @@
     android:background="@color/colorBackground"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/game_state_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_table"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorText"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        tools:text="@string/x_turn" />
+
     <TableLayout
         android:id="@+id/button_table"
         android:layout_width="330dp"
@@ -77,17 +88,6 @@
         </TableRow>
 
     </TableLayout>
-
-    <TextView
-        android:id="@+id/game_state_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button_table"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/colorText"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        tools:text="@string/x_turn" />
 
     <Button
         android:id="@+id/new_game_button"
